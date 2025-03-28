@@ -1,0 +1,14 @@
+/*1.Which Titles Sold the Most Worldwide?*/
+Select Top 1 Title,
+  Round(Sum (total_sales), 0) As Total_Sales
+  From vgchartz_2024
+  Group by Title
+  Order by Sum (total_sales) DESC
+
+/*Which Year Had the Highest Sales? Has the Industry Grown?*/
+Select Top 1 release_date As release_year,
+  Round(Sum (total_sales), 0) As Total_Sales
+  From vgchartz_2024
+  Group by release_date
+  Order by Sum (total_sales) DESC
+
